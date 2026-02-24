@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Recipe Website</title>
+
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+background-color:#f1faee;
+margin:40px;
+}
+
+h1{
+text-align:center;
+color:#1d3557;
+}
+
+.recipes{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+text-align:center;
+}
+
+.recipe-item{
+width:250px;
+}
+
+.recipe-item img{
+width:250px;
+border-radius:10px;
+border:3px solid #457b9d;
+transition:0.3s;
+}
+
+.recipe-item img:hover{
+transform:scale(1.05);
+}
+
+.recipe-name{
+margin-top:8px;
+font-weight:bold;
+color:#1d3557;
+}
+
+.menu ul{
+list-style:none;
+margin:0;
+padding:0;
+width:20%;
+background-color:#caf0f8;
+position:fixed;
+height:100%;
+}
+
+.menu li a{
+display:block;
+color:#03045e;
+padding:20px 16px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.menu li a:hover{
+background-color:#00b4d8;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="Margarita.html">Virgin Margarita</a></li>
+<li><a href="Strawberry.html">Strawberry Lemonade</a></li>
+<li><a href="Mango.html">Mango Smoothie</a></li>
+<li><a href="Lasagna.html">Lasagna</a></li>
+<li><a href="Sushi.html">Sushi</a></li>
+</ul>
+</div>
+
+<div style="margin-left:25%; padding:1px 16px;">
+
+<h1>My Recipe Collection</h1>
+<p style="text-align:center;">Click any recipe and learn how to make it in very few steps. </p>
+
+<div class="recipes">
+
+<div class="recipe-item">
+<a href="Margarita.html">
+<img src="margarita.jpg">
+</a>
+<div class="recipe-name">Virgin Margarita</div>
+</div>
+
+<div class="recipe-item">
+<a href="Strawberry.html">
+<img src="strawberry.jpg">
+</a>
+<div class="recipe-name">Strawberry Lemonade</div>
+</div>
+
+<div class="recipe-item">
+<a href="Mango.html">
+<img src="mango.jpg">
+</a>
+<div class="recipe-name">Mango Smoothie</div>
+</div>
+
+<div class="recipe-item">
+<a href="Lasagna.html">
+<img src="lasagna.jpg">
+</a>
+<div class="recipe-name">Lasagna</div>
+</div>
+
+<div class="recipe-item">
+<a href="Sushi.html">
+<img src="sushi.jpg">
+</a>
+<div class="recipe-name">Sushi</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
