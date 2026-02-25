@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Recipe Website</title>
+<title>Recipe Homepage</title>
 
 <style>
 body{
@@ -16,35 +16,32 @@ text-align:center;
 color:#1d3557;
 }
 
-.recipes{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
+/* Slideshow */
+.slideshow{
 text-align:center;
+margin-top:40px;
 }
 
-.recipe-item{
-width:250px;
-}
-
-.recipe-item img{
-width:250px;
-border-radius:10px;
-border:3px solid #457b9d;
+.slideshow img{
+width:500px;
+border-radius:12px;
+border:4px solid #457b9d;
+cursor:pointer;
 transition:0.3s;
 }
 
-.recipe-item img:hover{
-transform:scale(1.05);
+.slideshow img:hover{
+transform:scale(1.03);
 }
 
-.recipe-name{
-margin-top:8px;
+.caption{
+font-size:20px;
 font-weight:bold;
+margin-top:10px;
 color:#1d3557;
 }
 
+/* Menu */
 .menu ul{
 list-style:none;
 margin:0;
@@ -53,6 +50,7 @@ width:20%;
 background-color:#caf0f8;
 position:fixed;
 height:100%;
+overflow:auto;
 }
 
 .menu li a{
@@ -72,6 +70,7 @@ color:white;
 
 <body>
 
+<!-- MENU -->
 <div class="menu">
 <ul>
 <li><a href="index.html">Home</a></li>
@@ -83,51 +82,68 @@ color:white;
 </ul>
 </div>
 
+<!-- PAGE CONTENT -->
 <div style="margin-left:25%; padding:1px 16px;">
 
 <h1>My Recipe Collection</h1>
-<p style="text-align:center;">Click any recipe and learn how to make it in very few steps. </p>
+<p style="text-align:center;">Click the image to view the recipe.</p>
 
-<div class="recipes">
-
-<div class="recipe-item">
-<a href="Margarita.html">
-<img src="margarita.jpg">
+<div class="slideshow">
+<a id="recipeLink" href="Margarita.html">
+<img id="slideImage" src="margarita.jpg">
 </a>
-<div class="recipe-name">Virgin Margarita</div>
-</div>
-
-<div class="recipe-item">
-<a href="Strawberry.html">
-<img src="strawberry.jpg">
-</a>
-<div class="recipe-name">Strawberry Lemonade</div>
-</div>
-
-<div class="recipe-item">
-<a href="Mango.html">
-<img src="mango.jpg">
-</a>
-<div class="recipe-name">Mango Smoothie</div>
-</div>
-
-<div class="recipe-item">
-<a href="Lasagna.html">
-<img src="lasagna.jpg">
-</a>
-<div class="recipe-name">Lasagna</div>
-</div>
-
-<div class="recipe-item">
-<a href="Sushi.html">
-<img src="sushi.jpg">
-</a>
-<div class="recipe-name">Sushi</div>
+<div class="caption" id="caption">Virgin Margarita</div>
 </div>
 
 </div>
 
-</div>
+<script>
+const slides = [
+{
+image: "margarita.jpg",
+link: "Margarita.html",
+name: "Virgin Margarita"
+},
+{
+image: "strawberry.jpg",
+link: "Strawberry.html",
+name: "Strawberry Lemonade"
+},
+{
+image: "mango.jpg",
+link: "Mango.html",
+name: "Mango Smoothie"
+},
+{
+image: "lasagna.jpg",
+link: "Lasagna.html",
+name: "Lasagna"
+},
+{
+image: "sushi.jpg",
+link: "Sushi.html",
+name: "Sushi"
+}
+];
+
+let index = 0;
+
+function showSlide(){
+document.getElementById("slideImage").src = slides[index].image;
+document.getElementById("recipeLink").href = slides[index].link;
+document.getElementById("caption").textContent = slides[index].name;
+}
+
+function nextSlide(){
+index++;
+if(index >= slides.length){
+index = 0;
+}
+showSlide();
+}
+
+setInterval(nextSlide, 3000);
+</script>
 
 </body>
 </html>
